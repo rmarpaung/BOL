@@ -28,13 +28,18 @@ public class Main {
         int tahunSaatIni = now.getYear();
         int tahunAwal = tahunSaatIni - 100;
         int tahunAkhir = tahunSaatIni - 1;
-        
+
+        // Jika tahun lahir yang dimasukkan lebih kecil dari 100 tahun atau lebih besar
+        // dari tahun kemarin maka munculkan pesan
         if (tahunLahir < tahunAwal || tahunLahir > tahunAkhir) {
-            System.out.println("Tahun lahir yang dimasukkan harus dalam rentang dari tahun " + tahunAwal + " sampai " + tahunAkhir + ".");
+            System.out.println("Tahun lahir yang dimasukkan harus dalam rentang dari tahun " + tahunAwal + " sampai "
+                    + tahunAkhir + ".");
         } else {
+            // Hitung usia
             int usia = tahunSaatIni - tahunLahir;
             String pesan = "";
 
+            // Buat penggabungan kalimat yang sesuai dengan usia
             if (usia >= 21) {
                 pesan += " dan 21+";
             }
@@ -47,6 +52,7 @@ public class Main {
 
             pesan = "SU" + pesan;
 
+            // Tampilkan pesan ke layar.
             if (usia < 13) {
                 System.out.println("Adik " + nama + ", berusia " + usia
                         + " tahun, hanya dapat menonton film dengan klasifikasi " + pesan);
